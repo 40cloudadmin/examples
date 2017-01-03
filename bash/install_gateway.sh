@@ -1,16 +1,36 @@
 #!/bin/bash
 
 ##########################################
-# Bash example for automating gateway installtion
-# The example is based on an authentication based on username and password
-# 
-# Prerequisit:
-# JQ library (for parsing json output) in path
-# Download from https://stedolan.github.io/jq/
+# Waranty:
+
+# THE PROGRAM IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL, BUT WITHOUT ANY WARRANTY. 
+# IT IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, 
+# EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, 
+# THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. 
+# THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. 
+# SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL 
+# NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+
+# IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW THE AUTHOR WILL BE LIABLE TO YOU FOR DAMAGES, 
+# INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY 
+# TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED 
+# INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), 
+# EVEN IF THE AUTHOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
+
+# This program is a bash example for automating gateway installtion
+# The example is using Administrator username and password in order to authenticate (not key and secret key)
+# (Administrator role must be set as APIConsumenr in order to use username and password)
+# authentication results with a session token that can be used to make API calls 
 #
-# usage:
+# Prerequisites:
+# JQ library (for parsing json output) in path
+#    Download from https://stedolan.github.io/jq/
+#    Make sure JQ variable is poiting to your JQ implementation
+# Set the SSH_KEY_FILE variable to point to your own ssh pem file
+#
+# Usage:
 # install_gateway.sh <api_username> <api_password> <target server IP>
-# note that SSH_KEY_FILE must point to your SSH pem file
 #########################################
 
 PLATFORM="SoftwareInstallation"
@@ -41,18 +61,18 @@ validate_jq(){
 validate_input(){
    if [ -z "$USERNAME" ]
    then
-      echo "please provide API username"
+      echo "Please provide an Administrator's username"
       return 1
    fi
 
    if [ -z "$USERNAME" ]
    then
-      echo "please provide API password"
+      echo "Please provide an Administrator's password"
       return 1
    fi
    if [ -z "$TARGET_GWSERVER" ]
    then
-      echo "please provide IP Address of the target server"
+      echo "Please provide IP Address of the target server on which you wish to install the gateway"
       return 1
    fi
 
