@@ -71,4 +71,6 @@ print response
 print "response text: "
 #print response.text #or print "pretty" version:
 pp = pprint.PrettyPrinter(indent=4)
+pp.pprint(response.json())
+
                                     
