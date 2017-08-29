@@ -17,7 +17,7 @@ __date__ = "08.29.17"
 # - Change the values for fc_api_username and fc_api_password by your own values
 # - Run the script
 
-fc_api_username="<YOUR_FC_API_USERNAME> "
+fc_api_username="<YOUR_FC_API_USERNAME>"
 fc_api_password="<YOUR_FC_API_SECRET>"
 fc_api_entry_point="https://api.fortycloud.net"
 fc_domain="restapi"
