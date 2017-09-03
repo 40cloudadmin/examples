@@ -2,10 +2,10 @@
 __title__ = "40cloud_simple_token_auth.py"
 __author__ = "Bentzy Sagiv"
 __license__ = "GPL"
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 __maintainer__ = "Bentzy Sagiv"
 __email__ = "support@fortycloud.com"
-__date__ = "08.22.17"
+__date__ = "09.03.17"
 
 # Example for 40Cloud API - Simple Token authentication usage.
 #
