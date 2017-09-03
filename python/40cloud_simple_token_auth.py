@@ -20,7 +20,6 @@ import datetime
 import hmac
 import hashlib
 import base64
-import pprint
 
 fc_api_key="<YOUR_FC_API_KEY>"
 fc_api_secret="<YOUR_FC_API_SECRET>"
@@ -69,8 +68,4 @@ print "response: "
 print response
 
 print "response text: "
-#print response.text #or print "pretty" version:
-pp = pprint.PrettyPrinter(indent=4)
-pp.pprint(response.json())
-
-                                    
+print(json.dumps(response.json(), indent=4, sort_keys=True))                                    
